@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        My Tasker
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div class="task-container">
+        <h2>My Tasker</h2><br/>
+        <div class="add-task-container">
+            <form method="post" action="submit">
+                <input type="text" name="task">
+                <input type="submit" value="Add" />
+            </form>
+        </div>
+    </div>
+
+    <ul>
+        <% docs.forEach(details=> { %>
+            <li>
+                <div>
+                    <%=  details.content %>
+                        <a href="/update/<%=details._id %>"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="/remove/<%=details._id %>"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                </div>
+            </li>
+            <% }) %>
+    </ul>
+    </div>
+    <script src="https://kit.fontawesome.com/368ce4c52c.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
